@@ -1,6 +1,6 @@
 # Q-Neural-Dynamics: Quantum-Inspired Neural Framework
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amirkabirian/Q-Neural-Dynamics/blob/main/main.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amirkabirian/Q-Neural-Dynamics/blob/main/notebooks/main.ipynb)
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU-orange.svg)
 ![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red.svg)
