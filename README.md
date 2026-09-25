@@ -1,17 +1,32 @@
 # Q-Neural-Dynamics 🧠⚛️
 
-A high-performance research framework bridging **Quantum-Inspired Computing** and **Deep Learning** for the advanced analysis and classification of complex biological and neural time-series data.
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AmirKabirian/Q-Neural-Dynamics/blob/main/notebooks/main.ipynb)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&to&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
-## 🚀 Overview
-Traditional neural networks often struggle with the high noise levels and non-linear dynamics inherent in physiological and neural signals (e.g., EEG, cellular dynamics). **Q-Neural-Dynamics** leverages orthogonal transformations (inspired by quantum unitary operators) within a reservoir computing paradigm to project time-series data into high-dimensional Hilbert-equivalent spaces, enabling robust pattern recognition on standard GPU hardware without NISQ-era hardware noise constraints.
+## 🔬 Scientific Background & Core Hypothesis
+Biological and neural time-series data (such as LFP, EEG, or non-linear molecular dynamics) are notoriously plagued by high levels of noise, non-stationarity, and complex high-dimensional temporal interactions. Traditional recurrent neural networks (RNNs) often suffer from vanishing/exploding gradients and high computational overhead when modeling these systems.
 
-## 🛠️ Tech Stack
-* **Language:** Python 3.10+
-* **Deep Learning:** PyTorch
-* **Data Processing:** NumPy, Pandas, Scikit-Learn
+**Q-Neural-Dynamics** bridges **Quantum-Inspired Computing** with **Computational Neuroscience and Biology** by introducing a *Quantum-Inspired Orthogonal Reservoir Computing (QIRC)* architecture. Instead of relying on noisy, unscalable NISQ-era quantum hardware, this framework utilizes **energy-preserving orthogonal transformations** (inspired by quantum unitary operators via QR decomposition) to project complex biological time-series into high-dimensional Hilbert-equivalent feature spaces on standard CPU infrastructure.
 
-## 📦 Quick Start on Google Colab
-You can run this project instantly in your browser using Google Colab:
-1. Open your repository on GitHub.
-2. Open `main.ipynb`.
-3. Switch runtime accelerator to **GPU (T4)** and run all cells.
+---
+
+## 🛠️ Mathematical Framework
+1. **Quantum-Inspired State Transformation:** 
+   The input weights ($W_{in}$) and recurrent transition weights ($W_{rec}$) are initialized using orthogonal matrices derived via QR decomposition, ensuring norm-preserving (unitary-like) dynamics that prevent chaotic blow-ups:
+   $$W, R = \text{qr}(\mathcal{N}(0, 1))$$
+2. **Non-linear Phase Activation:**
+   Simulating quantum phase interference through trigonometric non-linearities:
+   $$h(t) = \tanh(W_{in} x(t) + W_{rec} h(t-1))$$
+
+---
+
+## 📂 Repository Structure
+```text
+Q-Neural-Dynamics/
+│
+├── notebooks/
+│   └── main.ipynb          # End-to-end execution notebook (CPU-optimized)
+├── requirements.txt        # Project dependencies
+└── LICENSE                 # Proprietary License (All Rights Reserved)
