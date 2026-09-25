@@ -1,32 +1,41 @@
-# Q-Neural-Dynamics 🧠⚛️
+# Q-Neural-Dynamics: Quantum-Inspired Neural Framework
 
-[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AmirKabirian/Q-Neural-Dynamics/blob/main/notebooks/main.ipynb)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&to&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPOSITORY_NAME/blob/main/main(1)_3.ipynb)
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-CPU-orange.svg)
+![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red.svg)
 
-## 🔬 Scientific Background & Core Hypothesis
-Biological and neural time-series data (such as LFP, EEG, or non-linear molecular dynamics) are notoriously plagued by high levels of noise, non-stationarity, and complex high-dimensional temporal interactions. Traditional recurrent neural networks (RNNs) often suffer from vanishing/exploding gradients and high computational overhead when modeling these systems.
-
-**Q-Neural-Dynamics** bridges **Quantum-Inspired Computing** with **Computational Neuroscience and Biology** by introducing a *Quantum-Inspired Orthogonal Reservoir Computing (QIRC)* architecture. Instead of relying on noisy, unscalable NISQ-era quantum hardware, this framework utilizes **energy-preserving orthogonal transformations** (inspired by quantum unitary operators via QR decomposition) to project complex biological time-series into high-dimensional Hilbert-equivalent feature spaces on standard CPU infrastructure.
+## Overview
+**Q-Neural-Dynamics** is a lightweight, CPU-optimized computational framework designed for advanced biological and neural time-series analysis. By bridging principles from quantum mechanics and recurrent neural dynamics, this project introduces a **Quantum-Inspired Orthogonal Reservoir** to process sequential data with high stability and computational efficiency[cite: 5].
 
 ---
 
-## 🛠️ Mathematical Framework
-1. **Quantum-Inspired State Transformation:** 
-   The input weights ($W_{in}$) and recurrent transition weights ($W_{rec}$) are initialized using orthogonal matrices derived via QR decomposition, ensuring norm-preserving (unitary-like) dynamics that prevent chaotic blow-ups:
-   $$W, R = \text{qr}(\mathcal{N}(0, 1))$$
-2. **Non-linear Phase Activation:**
-   Simulating quantum phase interference through trigonometric non-linearities:
-   $$h(t) = \tanh(W_{in} x(t) + W_{rec} h(t-1))$$
+## Core Scientific Principles
+1. **Unitary-Inspired Dynamics:** Standard recurrent neural networks often suffer from gradient instability over long sequences. This framework utilizes **QR Decomposition** on raw weight matrices to construct strictly orthogonal recurrent and input projections ($W_{in}, W_{rec}$), mimicking unitary operators found in quantum mechanics[cite: 5].
+2. **Fixed Reservoir Computing:** The recurrent reservoir weights are frozen during training (`requires_grad=False`), drastically reducing training overhead while leveraging rich nonlinear fading-memory dynamics through the $\tanh$ activation function[cite: 5].
+3. **Robust Sequence Pooling:** Temporal states extracted from the reservoir pass through a global temporal average pooling layer followed by a feed-forward classifier to yield precise binary classifications[cite: 5].
 
 ---
 
-## 📂 Repository Structure
+## Key Features
+* **Zero External Hardware Conflicts:** Fully optimized for stable execution on standard CPU environments using native PyTorch and NumPy[cite: 5].
+* **End-to-End Pipeline:** Includes automated data standardization, sliding-window sequence generation, training loops with cross-entropy loss tracking, and advanced clinical/performance metric evaluations (Accuracy, Precision, Recall, and F1-Score)[cite: 5].
+* **Built-in Visualization:** Generates clean optimization trajectory and training convergence curves[cite: 5].
+
+---
+
+## Performance & Evaluation Metrics
+The pipeline natively computes essential classification metrics:
+* **Test Accuracy**[cite: 5]
+* **Precision & Recall (Sensitivity)**[cite: 5]
+* **F1-Score**[cite: 5]
+
+---
+
+## Requirements
+To run this project locally, ensure you have the following packages installed:
 ```text
-Q-Neural-Dynamics/
-│
-├── notebooks/
-│   └── main.ipynb          # End-to-end execution notebook (CPU-optimized)
-├── requirements.txt        # Project dependencies
-└── LICENSE                 # Proprietary License (All Rights Reserved)
+torch>=2.0.0
+numpy>=1.20.0
+pandas>=1.3.0
+matplotlib>=3.4.0
